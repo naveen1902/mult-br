@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 echo "adding"
-                echo"available"
+              
                 
             }
         }
