@@ -6,4 +6,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Jenkins build
+      uses: jenkins-actions/jenkins-build@v1
+      with:
+         jenkins-url: 'http://52.14.62.107:8080/'
+         job-name: 'mul-br'
+         
+      
+    
     
