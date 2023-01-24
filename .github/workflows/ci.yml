@@ -7,9 +7,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Jenkins build
-      uses: jenkins-actions/jenkins-build@v2
       with:
          jenkins-url: 'http://52.14.62.107:8080/'
+         token: ${{ secrets.mytoken }}
          job-name: 'mul-br'
          
       
