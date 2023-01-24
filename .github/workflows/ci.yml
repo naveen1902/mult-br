@@ -8,7 +8,8 @@ jobs:
       uses: actions/checkout@v2
       with:
          jenkins-url: 'http://52.14.62.107:8080/'
-         token: ${{ secrets.MYTOKEN }}
+         jenkins-user: 'admin'
+         jenkins-token: ${{ secrets.MYTOKEN }}
          job-name: 'mul-br'
          
       
