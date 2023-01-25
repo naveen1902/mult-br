@@ -7,7 +7,7 @@ jobs:
     if: success()
     steps:
     - name: Trigger Jenkins Build
-      uses: jenkinsci/github-actions@v0.3.0
+      uses: actions/checkout@v2
       with:
         jenkins-url: 'http://52.14.62.107:8080/'
         jenkins-user: 'admin'
