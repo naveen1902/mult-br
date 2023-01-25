@@ -8,12 +8,12 @@ jobs:
     steps:
     - name: Trigger Jenkins Build
       uses: actions/checkout@v2
-      with:
-        jenkins-url: 'http://52.14.62.107:8080/'
-        jenkins-user: 'admin'
-        jenkins-token: ${{ secrets.MYTOKEN }}
-        job-name: 'mul-br'
-        add-build-url-to-check-run: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
 
+    - name: Set Jenkins build status
+      run: |
+        curl -X POST \
+        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+        -H "Accept: application/vnd.github+json" \
+        -d '{ "state": "success", "context": "jenkins/build", "target_url": "http://52.14.62.107:8080/job/mul-br" }' \
+          https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}
