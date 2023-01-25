@@ -1,21 +1,19 @@
-name: Status Check
-on: [pull_request]
+on: 
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
-  test-and-lint:
+  build:
     runs-on: ubuntu-latest
+    if: success()
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Trigger Jenkins Build
+      uses: jenkinsci/github-actions@v0.3.0
       with:
-         jenkins-url: 'http://52.14.62.107:8080/'
-         jenkins-user: 'admin'
-         jenkins-token: ${{ secrets.MYTOKEN }}
-         job-name: 'mul-br'
-    - name: Build and test
-      run: |
-        curl -X POST -u " 11dd4f8085055bba9af35e07a7f19501eb" http://52.14.62.107:8080/job/mul-br/ 
-      
-     
-      
-  
-    
+        jenkins-url: 'http://52.14.62.107:8080/'
+        jenkins-user: 'admin'
+        jenkins-token: ${{ secrets.MYTOKEN }}
+        job-name: 'mul-br'
+        add-build-url-to-check-run: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
