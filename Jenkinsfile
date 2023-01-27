@@ -19,7 +19,7 @@ pipeline {
                 echo 'Deploying...'
                 echo "adding"
                 echo"multisteps"
-                echo"newmethod"
+                
                
                 
                 
