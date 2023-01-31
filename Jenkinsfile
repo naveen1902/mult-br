@@ -17,8 +17,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                echo "adding
-                
+                echo "adding"
+                echo" dividing"
                
                 
                 
