@@ -20,6 +20,7 @@ pipeline {
                 echo "adding"
                 echo" dividing"
                 echo"multiplying'
+                echo"closing"
                
                 
                 
