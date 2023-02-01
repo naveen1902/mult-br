@@ -17,6 +17,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                echo "adding"
+                echo" dividing"
+                echo"multiplying"
+     
+               
+                
                 
             }
         }
