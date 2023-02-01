@@ -19,8 +19,7 @@ pipeline {
                 echo 'Deploying...'
                 echo "adding"
                 echo" dividing"
-                echo"multiplying'
-                echo"closing"
+                echo"multiplying"
                
                 
                 
